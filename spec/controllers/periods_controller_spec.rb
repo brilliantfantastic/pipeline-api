@@ -13,4 +13,12 @@ describe PeriodsController do
       response.status.must_equal 404
     end
   end
+
+  describe "POST 'create'" do
+    it "returns 201 when the period is created" do
+      period = Period.new week: 201423, hours_estimate: 63
+      post :create, format: :json, period: period.as_json(only: [:week, :hours_estimate])
+      response.status.must_equal 201
+    end
+  end
 end
