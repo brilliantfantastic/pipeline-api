@@ -10,10 +10,4 @@
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
 
-# Although this is not needed for an api-only application, rails4 
-# requires secret_key_base or secret_token to be defined, otherwise an 
-# error is raised.
-# Using secret_token for rails3 compatibility. Change to secret_key_base
-# to avoid deprecation warning.
-# Can be safely removed in a rails3 api-only application.
-PipelineApi::Application.config.secret_token = 'c17e427f0318c17d29ee0d193b929d1dfd9bdbfbffcd305d1a838d402e97c07eaa4fc3997ed11bd5a7a413e61fb45cffcce3725094b4c8bf2fb20df8cd44aa74'
+PipelineApi::Application.config.secret_key_base = 'c17e427f0318c17d29ee0d193b929d1dfd9bdbfbffcd305d1a838d402e97c07eaa4fc3997ed11bd5a7a413e61fb45cffcce3725094b4c8bf2fb20df8cd44aa74'
