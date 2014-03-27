@@ -36,11 +36,14 @@ GEM
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    metaclass (0.0.2)
     mime-types (1.25.1)
     minitest (4.7.5)
     minitest-rails (0.9.2)
       minitest (~> 4.7)
       rails (>= 3.0)
+    mocha (1.0.0)
+      metaclass (~> 0.0.1)
     multi_json (1.9.2)
     polyglot (0.3.4)
     rack (1.5.2)
@@ -88,6 +91,7 @@ PLATFORMS
 DEPENDENCIES
   active_model_serializers
   minitest-rails
+  mocha
   rails (= 4.0.2)
   rails-api
   sqlite3
