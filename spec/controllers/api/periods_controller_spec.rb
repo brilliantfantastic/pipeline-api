@@ -39,5 +39,10 @@ describe API::PeriodsController do
       period = Period.last
       period.hours_estimate.must_equal 66
     end
+
+    it "returns 404 when the period does not exist" do
+      put :update, format: :json, id: 123, period: {week: 201423}
+      response.status.must_equal 404
+    end
   end
 end
