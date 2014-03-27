@@ -1,4 +1,4 @@
-class PeriodsController < ApplicationController
+class API::PeriodsController < API::ApplicationController
   def show
     period = PeriodQuery.for_week params[:id]
     raise ActiveRecord::RecordNotFound unless period

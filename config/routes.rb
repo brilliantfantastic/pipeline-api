@@ -1,3 +1,5 @@
 PipelineApi::Application.routes.draw do
-  resources :periods, only: [:show, :create]
+  namespace :api do
+    resources :periods, only: [:show, :create]
+  end
 end

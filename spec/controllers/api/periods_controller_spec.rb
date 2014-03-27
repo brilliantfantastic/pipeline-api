@@ -1,6 +1,6 @@
-require_relative '../spec_helper'
+require_relative '../../spec_helper'
 
-describe PeriodsController do
+describe API::PeriodsController do
   describe "GET 'show'" do
     it "returns 200 when the period exists" do
       PeriodQuery.stubs(:for_week).with('201412').returns Period.new
