@@ -19,6 +19,8 @@ describe API::PeriodsController do
       period = Period.new week: 201423, hours_estimate: 63
       post :create, format: :json, period: period.as_json(only: [:week, :hours_estimate])
       response.status.must_equal 201
+      period = Period.last
+      period.week.must_equal 201423
     end
 
     it "returns 422 when the period week already exists" do
