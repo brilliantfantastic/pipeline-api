@@ -44,5 +44,11 @@ describe API::PeriodsController do
       put :update, format: :json, id: 123, period: {week: 201423}
       response.status.must_equal 404
     end
+
+    it "returns 422 when the period updates are invalid" do
+      period = Period.create week: 201423
+      put :update, format: :json, id: period.week, period: {week: nil}
+      response.status.must_equal 422
+    end
   end
 end

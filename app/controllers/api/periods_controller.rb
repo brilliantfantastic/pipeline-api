@@ -13,7 +13,7 @@ class API::PeriodsController < API::ApplicationController
   def update
     period = PeriodQuery.for_week params[:id]
     raise ActiveRecord::RecordNotFound unless period
-    period.update_attributes period_params
+    period.update_attributes! period_params
     render json: period
   end
 
