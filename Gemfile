@@ -9,3 +9,7 @@ group :test, :development do
   gem 'sqlite3'
   gem 'minitest-rails'
 end
+
+group :test do
+  gem 'mocha'
+end
