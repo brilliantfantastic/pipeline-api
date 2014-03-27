@@ -6,7 +6,7 @@ class PeriodsController < ApplicationController
   end
 
   def create
-    period = Period.create period_params
+    period = Period.create! period_params
     render json: period, status: :created
   end
 

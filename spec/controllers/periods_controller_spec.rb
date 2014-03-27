@@ -20,5 +20,11 @@ describe PeriodsController do
       post :create, format: :json, period: period.as_json(only: [:week, :hours_estimate])
       response.status.must_equal 201
     end
+
+    it "returns 422 when the period week already exists" do
+      period = Period.create week: 201423
+      post :create, format: :json, period: period.as_json(only: [:week, :hours_estimate])
+      response.status.must_equal 422
+    end
   end
 end
