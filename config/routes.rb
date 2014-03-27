@@ -1,5 +1,5 @@
 PipelineApi::Application.routes.draw do
   namespace :api, defaults: { format: :json } do
-    resources :periods, only: [:show, :create]
+    resources :periods, only: [:show, :create, :update]
   end
 end

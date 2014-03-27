@@ -27,4 +27,15 @@ describe API::PeriodsController do
       response.status.must_equal 422
     end
   end
+
+  describe "PUT 'update'" do
+    it "returns 200 when the period is updated" do
+      period = Period.create week: 201423
+      period.hours_estimate = 66
+      put :update, format: :json, id: period.week, period: period.as_json(only: [:week, :hours_estimate])
+      response.status.must_equal 200
+      period = Period.last
+      period.hours_estimate.must_equal 66
+    end
+  end
 end

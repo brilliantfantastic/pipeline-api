@@ -10,6 +10,12 @@ class API::PeriodsController < API::ApplicationController
     render json: period, status: :created
   end
 
+  def update
+    period = PeriodQuery.for_week params[:id]
+    period.update_attributes period_params
+    render json: period
+  end
+
   private
 
   def period_params
